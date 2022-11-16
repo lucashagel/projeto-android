@@ -1,0 +1,227 @@
+@charset "UTF-8";
+/*lembrar de pôr ponto e vírgula depois do "UTF-8"*/
+
+/*inclusão dos commandos sempre antes de qualquer outra informação. @import é usado para fontes externas; @font-face para fontes internas*/
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url("../fontes/Bebas Neue.ttf") format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Android';
+    src: url("../fontes/idroid.otf") format('opentype');
+    font-weight: normal;
+}
+
+:root {
+
+    /*relacionando as variáveis de cores root*/
+    --color0:#c5ebd6;
+    --color1:#83e1ad;
+    --color2:#3ddc84;
+    --color3:#2fa866;
+    --color4:#1a5c37;
+    --color5:#063d1e;
+    /*relacionando as variáveis de fontes root*/
+    --fontStandard: Arial, Verdana, Helvetica, sans-serif;
+    --fontSpecial: 'Bebas Neue';
+    --fontAndroid: 'Android', cursive;
+}
+
+* {
+    /*asterísco é sempre uma inclusão universal*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /*aplica-se a tudo que estiver no corpo*/
+    background-color: var(--color0);
+    font-family: var(--fontStandard);  
+}
+
+a.external::after {
+        /*aplica-se depois de tudo que estiver nos links com a classe external*/
+    content: "\1F517\00A0";
+}
+
+header {
+        /*aplica-se a tudo que estiver no cabeçalho*/
+    background-image: linear-gradient(to bottom, var(--color3), var(--color5));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    max-width: 500px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.350);
+}
+
+header > h1 {
+        /*aplica-se a todos os titulos h1 dentro do cabeçalho*/
+    color: var(--color3);
+    font-family: var(--fontSpecial);
+    font-weight: normal;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.350);
+}
+
+header > p {
+    /*aplica-se a todos os parágrafos dentro do cabeçalho*/
+    color: white;
+    font-family: var(--fontStandard);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+nav {
+    /*aplica-se a tudo que estiver dentro do menu de navegação*/
+    background-color: var(--color5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.175);   
+}
+
+nav > a {
+    /*aplica-se a todos os links dentro do menu de navegação*/
+    color: var(--color1);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav > a:hover {
+    /*aplica-se sempre que passar o cursor sobre os liks no menu de navegação*/
+    background-color: var(--color3);
+    color: var(--color5);
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+}
+
+main {
+    /*aplica-se a todo o conteúdo que estiver dentro de main*/
+    background-color: white;
+    min-width: 270px;
+    max-width: 900px;
+    padding: 20px;
+    margin: auto;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.175);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+
+main p {
+    /*aplica-se a todos os parágrafos dentro do main*/
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+main strong {
+    /*aplica-se a tudo que estiver em negrito dentro de main*/
+    color: var(--color4);
+    font-weight: bold;
+}
+
+main a {
+    /*aplica-se a todos os links dentro de main*/
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color5);
+    background-color: var(--color0);
+}
+
+main a:hover {
+    /*aplica-se sempre que passar o cursor sobre os liks dentro de main*/
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--color4);
+    background-color: var(--color1);
+}
+
+main img {
+    /*aplica-se a todas as imagens em main*/
+    width: 100%;
+}
+
+main img.small {
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+main h1 {
+    /*aplicase a todos os titulos h1 dentro de main*/
+    color: var(--color5);
+    font-family: var(--fontAndroid);
+    font-weight: normal;  
+}
+
+main h2 {
+    /*aplicase a todos os títulos h2 dentro de main*/
+    font-family: var(--fontAndroid);
+    color: var(--color4);
+    font-size: 1,3em;
+    background-image: linear-gradient(to right, var(--color1), transparent);
+    text-indent: 10px;
+    font-weight: normal;
+}
+
+main h3 {
+    /*aplicase a todos os títulos h3 dentro de main*/
+    font-family: var(--fontStandard);
+    background-color: var(--color4);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+div.vid {
+    /*aplica-se a classe vid*/
+    position: relative;
+    background-color: var(--color5);
+    padding-bottom: 56.5%;
+    margin: 0, -20, 0, -20;
+    }
+
+div.vid > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+aside {
+    /*aplica-se a tudo que estiver contido em aside*/
+    background-color: var(--color1);
+    border-radius: 10px 10px 10px 10px;
+}
+
+aside > ul {
+    /*aplica-se a lista contida em aside*/
+    list-style-type: "\2714\00A0\00A0";
+    list-style-position: inside;
+    columns: 2;
+}
+
+footer {
+    background-color: var(--color5);
+    color: white;
+    text-align: center;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: var(--color4);
+    background-color: var(--color1);
+}
